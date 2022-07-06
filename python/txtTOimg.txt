@@ -1,0 +1,12 @@
+import shutil
+import numpy as np
+
+data = []
+for line in open("tuxiang.txt", "r"):  
+    data.append(line)
+# print(data)  # data中得到了txt文件的所有图像的名称
+
+for a in data:
+    srcfile_path = 'Imgs/{}'.format(a[:-1]) + '.jpg' #因为我这个txt中的图像名称没有后缀，故添加一个
+    tarfile_path = 'mubiao/images'   #新创建一个文件夹
+    shutil.copy(srcfile_path, tarfile_path)
